@@ -46,6 +46,7 @@
 @synthesize errorLabel = __errorLabel;
 @synthesize inputField = __inputField;
 @synthesize messageText = __messageText;
+@synthesize repeatMessageText = __repeatMessageText;
 @synthesize errorText = __errorText;
 @synthesize labels = __labels;
 @synthesize mode = __mode;
@@ -85,6 +86,7 @@
     self.errorLabel = nil;
     self.inputField = nil;
     self.messageText = nil;
+    self.repeatMessageText = nil;
     self.errorText = nil;
     self.labels = nil;
     self.text = nil;
@@ -201,6 +203,9 @@
                 if (self.text == nil) {
                     self.text = self.inputField.text;
                     [self resetInput];
+                    if (self.repeatMessageText) {
+                        self.messageLabel.text = self.repeatMessageText;
+                    }
                 }
                 else {
                     if ([self.text isEqualToString:self.inputField.text] &&
