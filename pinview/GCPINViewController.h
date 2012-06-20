@@ -49,6 +49,15 @@ typedef BOOL (^GCPasscodeVerifyBlock) (NSString *code);
  */
 @property (nonatomic, copy) NSString *messageText;
 
+
+/*
+ 
+ Set the text to appear when asking the user to repeat their passcode
+ during the creation workflow.
+ 
+ */
+@property (nonatomic, copy) NSString *repeatMessageText;
+
 /*
  
  Set the text to display below the input area when the passcode fails
